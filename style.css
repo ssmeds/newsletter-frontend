@@ -1,0 +1,51 @@
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#main {
+  position: fixed;
+  bottom: 10%;
+  top: 10%;
+  background: rgba(0, 0, 0, 0.2);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+h1,
+#newsletter-header {
+  text-align: center;
+  color: rgb(230, 205, 236);
+  /* font-size: 2.5rem; */
+}
+
+h2 {
+  text-align: center;
+  color: rgb(140, 114, 146);
+}
+
+#loginForm,
+#registerForm {
+  background-color: #f1f1f1;
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+  gap: 0.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#loginForm {
+  margin-bottom: 2rem;
+}

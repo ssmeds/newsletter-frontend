@@ -8,7 +8,7 @@ if (localStorage.getItem("loggedInUser") != null) {
 
 function logIn() {
 
-  let loginForm = `<div>
+  let loginForm = `<div id="loginForm"><h2>Logga in</h2>
   <input type="text" name="userName" id="userName" placeholder="Användarnamn">
   <input type="password" name="userPass" id="password" placeholder="Lösenord">
   <input type="email" name="email" id="email" placeholder="Email">
@@ -59,11 +59,11 @@ function logIn() {
 }
 
 function register() {
-  let registerForm = `<form action="https://stinas-newsletter.herokuapp.com/users/add" method="post">
-  <label for="userName">Användarnamn: </label><input type="text" name="userName" id="userName">
-  <label for="password">Lösenord: </label><input type="text" name="password" id="userPass">
+  let registerForm = `<div id="registerForm"><h2>Registrera dig</h2><form action="https://stinas-newsletter.herokuapp.com/users/add" method="post">
+  <input type="text" name="userName" id="userName" placeholder="Användarnamn">
+  <input type="text" name="password" id="userPass" placeholder="Lösenord">
   <input type="email" name="email" id="email" placeholder="Email">
-  <button type="submit" id="register">Registrera dig</button>
+  <button type="submit" id="register">Registrera dig</button></div>
 </form>`
 
   document.getElementById("container").insertAdjacentHTML("beforeend", registerForm);
