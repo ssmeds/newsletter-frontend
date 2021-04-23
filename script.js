@@ -96,7 +96,11 @@ function profile(user) {
       let profileView = `<div>
       <h2>Hej ${user.userName}</h2>
       <div>Nyhetsbrev: <span>${text}</span></div>
+<<<<<<< HEAD
       <a href="https://stinas-newsletter.herokuapp.com/${user.userName}"><button id="newsBtn">${buttonText}</button></a>
+=======
+      <a href="https://stinas-newsletter.herokuapp.com/users/newsletter/${user.userName}"><button id="newsBtn">${buttonText}</button></a>
+>>>>>>> eb63b4d6400daeee5aa8c1e4885d7ff4618b4dee
     </div>`
       document.getElementById("container").innerHTML = profileView;
 
