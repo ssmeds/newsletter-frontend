@@ -6,28 +6,26 @@ if (localStorage.getItem("loggedInUser") != null) {
   register();
 }
 
-// logIn();
-
-
 function logIn() {
-
 
   let loginForm = `<div>
   <input type="text" name="userName" id="userName" placeholder="Användarnamn">
   <input type="password" name="userPass" id="password" placeholder="Lösenord">
+  <input type="email" name="email" id="email" placeholder="Email">
   <button id="loginBtn">Logga in</button></div>`
-
 
   document.getElementById("container").insertAdjacentHTML("afterbegin", loginForm);
   document.getElementById("loginBtn").addEventListener("click", function () {
     let userName = document.getElementById("userName").value;
     let userPass = document.getElementById("password").value;
+    let userEmail = document.getElementById("email").value;
 
     let user = {
       userName: userName,
       userPass: userPass,
       userId: "",
-      newsletter: "false"
+      newsletter: "false",
+      email: userEmail
     }
 
     console.log('klick på knappen för att logga in');
@@ -57,7 +55,6 @@ function logIn() {
           console.log("Något gick fel");
         }
       })
-
   })
 }
 
@@ -65,14 +62,14 @@ function register() {
   let registerForm = `<form action="https://stinas-newsletter.herokuapp.com/users/add" method="post">
   <label for="userName">Användarnamn: </label><input type="text" name="userName" id="userName">
   <label for="password">Lösenord: </label><input type="text" name="password" id="userPass">
+  <input type="email" name="email" id="email" placeholder="Email">
   <button type="submit" id="register">Registrera dig</button>
-  <a href="https://stinas-newsletter.herokuapp.com/">Registera dig</a>
 </form>`
 
   document.getElementById("container").insertAdjacentHTML("beforeend", registerForm);
-  document.getElementById("register").addEventListener("click", function () {
-    console.log('klick på knappen för att registrera sig');
-  })
+  // document.getElementById("register").addEventListener("click", function () {
+  //   console.log('klick på knappen för att registrera sig');
+  // })
 }
 
 function profile(user) {
@@ -92,22 +89,11 @@ function profile(user) {
         buttonText = "Vill du avsluta din prenumeration?"
       }
 
-
       let profileView = `<div>
       <h2>Hej ${user.userName}</h2>
       <div>Nyhetsbrev: <span>${text}</span></div>
       <a href="https://stinas-newsletter.herokuapp.com/users/newsletter/${user.userName}"><button id="newsBtn">${buttonText}</button></a>
     </div>`
       document.getElementById("container").innerHTML = profileView;
-
-
-      // document.getElementById("newsBtn").addEventListener("click", function () {
-      //   fetch(`http://localhost:3001/users/list/:${user.userName}`)
-      //     .then(res => res.json())
-      //     .then(data => {
-      //       let userData = JSON.parse(data);
-      //       console.log(userData);
-      //     })
-      // })
     })
 }
