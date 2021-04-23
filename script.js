@@ -33,7 +33,7 @@ function logIn() {
     console.log('klick på knappen för att logga in');
     console.log(user);
 
-    fetch('http://localhost:3001/users/login', {
+    fetch('https://stinas-newsletter.herokuapp.com/users/login', {
         method: "POST",
         headers: {
           "Content-type": "application/json"
@@ -62,11 +62,11 @@ function logIn() {
 }
 
 function register() {
-  let registerForm = `<form action="http://localhost:3001/users/add" method="post">
+  let registerForm = `<form action="https://stinas-newsletter.herokuapp.com/users/add" method="post">
   <label for="userName">Användarnamn: </label><input type="text" name="userName" id="userName">
   <label for="password">Lösenord: </label><input type="text" name="password" id="userPass">
   <button type="submit" id="register">Registrera dig</button>
-  <a href="http://localhost:3001/">Registera dig</a>
+  <a href="https://stinas-newsletter.herokuapp.com/">Registera dig</a>
 </form>`
 
   document.getElementById("container").insertAdjacentHTML("beforeend", registerForm);
@@ -77,7 +77,7 @@ function register() {
 
 function profile(user) {
   console.log(user.userName);
-  fetch(`http://localhost:3001/users/list/${user.userName}`)
+  fetch(`https://stinas-newsletter.herokuapp.com/users/list/${user.userName}`)
     .then(res => res.json())
     .then(data => {
       let userData = JSON.parse(data);
@@ -96,7 +96,7 @@ function profile(user) {
       let profileView = `<div>
       <h2>Hej ${user.userName}</h2>
       <div>Nyhetsbrev: <span>${text}</span></div>
-      <a href="http://localhost:3001/users/newsletter/${user.userName}"><button id="newsBtn">${buttonText}</button></a>
+      <a href="https://stinas-newsletter.herokuapp.com/${user.userName}"><button id="newsBtn">${buttonText}</button></a>
     </div>`
       document.getElementById("container").innerHTML = profileView;
 
