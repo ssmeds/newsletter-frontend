@@ -101,9 +101,9 @@ function profile(user) {
       <h2>Hej ${user.userName}</h2>
       <div id="newsletterDiv">Nyhetsbrev: <span>${text}</span></div>
       <a href="https://stinas-newsletter.herokuapp.com/users/newsletter/${user.userName}"><button id="newsBtn">${buttonText}</button></a>
-      ${logOutBtn}
     </div>`
       document.getElementById("container").innerHTML = profileView;
+      document.getElementById("container").appendChild(logOutBtn);
       document.getElementById("logOutBtn").addEventListener("click", function () {
         localStorage.removeItem("loggedInUser");
         startPage();
