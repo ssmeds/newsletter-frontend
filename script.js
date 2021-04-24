@@ -6,6 +6,7 @@ if (localStorage.getItem("loggedInUser") != null) {
 }
 
 function startPage() {
+  document.getElementById("container").innerHTML = "";
   logIn();
   register();
 }
