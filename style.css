@@ -87,9 +87,19 @@ button:hover {
 
 #newsletterDiv {
   color: rgb(75, 66, 77);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  padding: 2rem;
 }
 
 span {
   color: rebeccapurple;
   font-size: 1.7rem;
+  text-align: center;
+}
+
+a {
+  text-align: center;
 }
