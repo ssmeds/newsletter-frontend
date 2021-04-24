@@ -2,9 +2,17 @@ if (localStorage.getItem("loggedInUser") != null) {
   let user = JSON.parse(localStorage.getItem("loggedInUser"));
   profile(user);
 } else {
+  startPage();
+}
+
+function startPage() {
   logIn();
   register();
 }
+
+let logOutBtn = document.createElement("button");
+logOutBtn.textContent = "Logga ut";
+logOutBtn.id = "logOutBtn"
 
 function logIn() {
 
@@ -93,7 +101,12 @@ function profile(user) {
       <h2>Hej ${user.userName}</h2>
       <div id="newsletterDiv">Nyhetsbrev: <span>${text}</span></div>
       <a href="https://stinas-newsletter.herokuapp.com/users/newsletter/${user.userName}"><button id="newsBtn">${buttonText}</button></a>
+      ${logOutBtn}
     </div>`
       document.getElementById("container").innerHTML = profileView;
+      document.getElementById("logOutBtn").addEventListener("click", function () {
+        localStorage.removeItem("loggedInUser");
+        startPage();
+      })
     })
 }
