@@ -89,9 +89,9 @@ function profile(user) {
         buttonText = "Vill du avsluta din prenumeration?"
       }
 
-      let profileView = `<div>
+      let profileView = `<div id="profileView">
       <h2>Hej ${user.userName}</h2>
-      <div>Nyhetsbrev: <span>${text}</span></div>
+      <div id="newsletterDiv">Nyhetsbrev: <span>${text}</span></div>
       <a href="https://stinas-newsletter.herokuapp.com/users/newsletter/${user.userName}"><button id="newsBtn">${buttonText}</button></a>
     </div>`
       document.getElementById("container").innerHTML = profileView;

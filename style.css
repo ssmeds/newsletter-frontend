@@ -79,3 +79,17 @@ button:hover {
   background-color: rgb(75, 66, 77);
   color: #f1f1f1;
 }
+
+#profileView {
+  display: flex;
+  flex-direction: column;
+}
+
+#newsletterDiv {
+  color: rgb(75, 66, 77);
+}
+
+span {
+  color: rebeccapurple;
+  font-size: 1.7rem;
+}
