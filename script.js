@@ -61,7 +61,7 @@ function logIn() {
 function register() {
   let registerForm = `<div id="registerForm"><h2>Registrera dig</h2><form action="https://stinas-newsletter.herokuapp.com/users/add" method="post">
   <input type="text" name="userName" id="userName" placeholder="Användarnamn">
-  <input type="text" name="password" id="userPass" placeholder="Lösenord">
+  <input type="password" name="password" id="userPass" placeholder="Lösenord">
   <input type="email" name="email" id="email" placeholder="Email">
   <button type="submit" id="register">Registrera dig</button></div>
 </form>`
