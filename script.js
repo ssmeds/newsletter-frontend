@@ -106,6 +106,7 @@ function profile(user) {
       document.getElementById("container").appendChild(logOutBtn);
       document.getElementById("logOutBtn").addEventListener("click", function () {
         localStorage.removeItem("loggedInUser");
+        document.getElementById("container").innerHTML = "";
         startPage();
       })
     })
