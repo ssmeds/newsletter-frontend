@@ -7,10 +7,8 @@
 }
 
 #main {
-  position: fixed;
-  bottom: 10%;
-  top: 10%;
-
+  display: flex;
+  position: sticky;
   color: #f1f1f1;
   width: 100%;
   padding: 20px;

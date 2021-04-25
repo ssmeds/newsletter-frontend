@@ -99,10 +99,12 @@ function profile(user) {
       }
 
       let profileView = `<div id="profileView">
-      <h2>Hej ${user.userName}</h2>
+      <h2>Hej ${user.userName}!</h2>
       <div id="newsletterDiv">Nyhetsbrev: <span>${text}</span></div>
       <a href="https://stinas-newsletter.herokuapp.com/users/newsletter/${user.userName}"><button id="newsBtn">${buttonText}</button></a>
     </div>`
+      document.getElementById("heading").innerHTML = `${user.userName}s coola sida`;
+      document.getElementById("newsletter-header").innerHTML = "";
       document.getElementById("container").innerHTML = profileView;
       document.getElementById("container").appendChild(logOutBtn);
       document.getElementById("logOutBtn").addEventListener("click", function () {
